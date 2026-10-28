@@ -1,2 +1,1 @@
-# javascript-weather-dashboard
-imlk
+A dynamic Weather Dashboard developed using HTML, CSS, and asynchronous JavaScript to retrieve real-time weather information from a public weather API. Users can search for a city and view relevant weather details, including temperature, humidity, wind speed, and current conditions. The application uses the Fetch API, async/await, and JSON parsing to process API responses and update the interface dynamically. Error handling provides useful feedback for invalid city names, network failures, and unsuccessful API requests. Loading states improve the user experience while data is being retrieved. This project demonstrates REST API integration, asynchronous programming, and the development of interactive, data-driven web applications.
