@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 4 – Weather Dashboard</title>
+  <meta name="description" content="Live weather by city using the Open-Meteo REST API, fetch and async/await.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Weather</h1>
+      <div class="units" id="units" role="group" aria-label="Temperature unit">
+        <button type="button" data-unit="celsius" aria-pressed="true">°C</button>
+        <button type="button" data-unit="fahrenheit" aria-pressed="false">°F</button>
+      </div>
+    </header>
+
+    <form class="search" id="search-form" autocomplete="off" role="search">
+      <label class="visually-hidden" for="city">City name</label>
+      <input type="search" id="city" placeholder="Search for a city, e.g. Shimla" maxlength="80" required>
+      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="button" class="btn btn-outline" id="locate">Use my location</button>
+    </form>
+
+    <div class="recent" id="recent" hidden>
+      <span class="recent-label">Recent</span>
+      <div class="recent-list" id="recent-list"></div>
+    </div>
+
+    <p class="status" id="status" role="status"></p>
+
+    <section class="dashboard" id="dashboard" aria-live="polite" hidden>
+      <div class="hero">
+        <div>
+          <h2 class="place" id="place"></h2>
+          <p class="place-sub" id="place-sub"></p>
+          <p class="condition"><span class="icon" id="icon" aria-hidden="true"></span> <span id="condition"></span></p>
+        </div>
+        <p class="temp"><span id="temp"></span><span class="temp-unit" id="temp-unit"></span></p>
+      </div>
+
+      <dl class="metrics">
+        <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div><dt>Wind speed</dt><dd id="wind"></dd></div>
+        <div><dt>Feels like</dt><dd id="feels"></dd></div>
+        <div><dt>Pressure</dt><dd id="pressure"></dd></div>
+      </dl>
+
+      <div class="forecast-head">
+        <h3>5-day forecast</h3>
+        <p class="updated"><span id="updated"></span> <button type="button" class="link-btn" id="refresh">Refresh</button></p>
+      </div>
+      <ul class="forecast" id="forecast"></ul>
+    </section>
+
+    <section class="matches" id="matches" hidden>
+      <p>Other matches for this search</p>
+      <div class="recent-list" id="matches-list"></div>
+    </section>
+
+    <p class="credit">Data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. No API key needed.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
